@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="uipath",
-    version="0.0.1",
+    version="0.0.2",
     author="Christian Blandford",
     author_email="christianblandford@me.com",
     description="A python API for editing UiPath .xaml files programatically.",
