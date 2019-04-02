@@ -42,6 +42,9 @@ class Sequence:
 		file.write(str(data))
 		file.close()
 
+		#Re-initialize variables from the newly saved XAML file
+		self.init_vars()
+
 		return file
 
 	#Get classname from raw XAML
@@ -74,6 +77,7 @@ class Sequence:
 	#Sets node name
 	def set_node_name(self, node, new_name):
 		node["DisplayName"] = new_name
+		this.save()
 		return new_name
 
 	#Returns an argument by name
@@ -415,6 +419,9 @@ class Sequence:
 			self.outer_sequence.xaml.find(attrs={"sap2010:WorkflowViewState.IdRef":self.id}).replace_with(self.xaml)
 			self.outer_sequence.save()
 
+		#To String
+		def __str__(self):
+			return str(self.xaml.prettify())
 
 		#Define inner class for invoked_argument
 		class Invoked_Workflow_Argument():
@@ -472,12 +479,4 @@ class Sequence:
 			def update_parent(self):
 				self.parent.invoked_workflow.find("ui:InvokeWorkflowFile.Arguments").findChildren()[self.index].replace_with(self.xaml)
 				self.parent.update_outer_sequence()
-
-
-
-
-
-
-
-
 
