@@ -11,8 +11,35 @@ Welcome to UiPath-Python's documentation!
    :caption: Contents:
 
 
+Projects
+==================
 
-Indices and tables
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+Sequences and .XAML Files
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+Arguments
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+Activities
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+Variables
 ==================
 
 * :ref:`genindex`

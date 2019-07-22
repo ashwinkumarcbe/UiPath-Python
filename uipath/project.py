@@ -1,6 +1,6 @@
 import glob
 from .functions import Functions
-from .sequence import Sequence
+from .xaml_file import Class
 
 import os
 
@@ -74,7 +74,11 @@ class Project:
 
 	#Load a class/sequence. Input is relative path to the sequence
 	def load_class(self, sequence):
-		return Sequence(os.path.join(self.path, sequence))
+		print(sequence)
+		if os.path.isfile(os.path.join(self.path, sequence)):
+			return Class(os.path.join(self.path, sequence))
+		else:
+			raise("File not found. Cannot load class.")
 
 	#Creats a new class/sequence
 	#like this: rel_path="new_directory_in_project" name="TestSequence"
@@ -87,4 +91,4 @@ class Project:
 		Functions.create_file(os.path.join(self.path, rel_path, name + ".xaml"), xaml)
 
 		#Create a new sequence class by opening the newly created file
-		return Sequence(os.path.join(self.path, rel_path, name + ".xaml"))
+		return Class(os.path.join(self.path, rel_path, name + ".xaml"))
